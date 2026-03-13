@@ -1,0 +1,97 @@
+1. User (Abstract Class)
+The User class is an abstract class that represents a general user in the system, and it inherited by Student and Lecturer Class.
+
+Attributes:
+•	userID – Unique identifier for each user
+•	password – User account password
+•	email – User email address
+•	username – User’s name in the system
+Methods:
+•	login() – Allows users to log into system
+•	logout() – Allows users to log out of the system
+•	updateProfile() – Allows users to update their personal information
+
+
+2. Student Class
+The Student class inherits from the User class and it represents students who use the system.
+Attributes:
+•	studentID – Unique identifier for the student
+•	major – The student’s field of study
+•	enrolledDate – The date the student enrolled
+Methods:
+•	viewAssignments() – Allows students to view their assignments
+•	msrkAsCompleted() – Allows students to mark assignments as completed
+•	viewDashboard() – Display an overview of assignments and submission
+
+
+
+3. Lecturer Class
+The Lecturer class also inherits from the User class and represents lecturers who manage assignments in the system.
+Attributes:
+•	staffID – Unique identifier for the lecturer
+•	department – The lecturer’s department
+•	officeLocation – Location of the lecturer’s office
+Methods:
+•	viewAssignments() – Allows students to view their assignments
+•	msrkAsCompleted() – Allows students to mark assignments as completed
+•	viewSubmissions() – Allows lecturers to review student submissions
+
+4. Assignment Class
+The Assignment class represents assignments created by lecturers and completed by students.
+Attributes:
+•	assignmentID – Unique identifier for the assignment
+•	title – Assignment title
+•	description – Assignment description
+•	dueDate – The deadline for submission
+•	status – Current status of the assignment
+Methods:
+•	updateStatus() – Update the assignment status
+•	calculatePenalty() – Calculates late submission penalties
+•	delete() – Removes the assignment from the system
+
+
+
+
+
+
+5. Submission Class
+The Submission class represents the assignments submitted by students.
+Attributes:
+•	submissionID – Unique identifier for the submission
+•	fileURL – Location of the submitted file
+•	submittedAt – Date and time the assignment was submitted
+•	grade – Grade given by the lecturer
+•	feedback – Lecturer’s comments on the submission
+Methods:
+•	updateFile() – Allows students to upload assignment files
+
+6. Notification Class
+The Notification class handles reminders and notifications sent to users.
+Attributes:
+•	notiID – Unique identifier for the notification
+•	message – Notification content
+•	timestamp – Time the notification was sent
+Methods:
+•	sendReminder() – Sends assignment reminders to users
+•	markAsRead() – Marks the notification as read
+
+
+
+
+
+
+
+
+Relationships Between Classes
+•	User  Student / Lecturer
+This is an inheritance relationship where both Student and Lecturer inherit common attributes and methods from User.
+•	Lecturer  Assignment (1:N)
+One lecturer can create many assignments.
+•	Student  Assignment (N:N)
+A student can have multiple assignments, and each assignment can be assigned to multiple students.
+•	Assignment  Submission (1:N)
+One assignment can have many submissions.
+•	Student  Submission (1:N)
+One student can submit multiple assignments.
+•	User  Notification (1:N)
+One user can receive multiple notification.
